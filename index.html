@@ -93,26 +93,12 @@
         <h1>NEWSLETTER</h1>
         <p>To recieve tips on how to grow your community, sign up to our weekly newsletter. We’ll never 
           send you spam or pass on your email address</p>
+          
         <form onsubmit="return check()" novalidate>
-          <input type="email" id="email" name="email" placeholder="" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required>
-          <input type="submit" value="Subscribe">
-          <div id="msg" class="emsg"></div>
+          <input type="email" id="email" name="email" placeholder="">
+          <input type="submit" class="submit" value="Subscribe">
+          <div id="msg"></div>
         </form>
-        <script>
-          function check () {
-            var valid = true, error = "", field = "";
-            field = document.getElementById("email");
-            error = document.getElementById("msg");
-            if (!field.checkValidity()) {
-              valid = false;
-              field.classList.add("err");
-              error.innerHTML = "Check your email please";
-            } else {
-              field.classList.remove("err");
-              error.innerHTML = "";
-            }
-            return valid; }
-        </script>
       </div>
     </div>
     
@@ -121,5 +107,21 @@
       Coded by <a href="https://github.com/nefzina">@nefzina</a>.
     </p>
   </footer>
+
+  <script>
+    function check () {
+      var valid = true, error = "", field = "";
+      field = document.getElementById("email");
+      error = document.getElementById("msg");
+      if (!field.checkValidity() || field == "") {
+        valid = false;
+        field.classList.add("err");
+        error.innerHTML = "Check your email please";
+      } else {
+        field.classList.remove("err");
+        error.innerHTML = "";
+      }
+      return valid; }
+  </script>
 </body>
 </html>
