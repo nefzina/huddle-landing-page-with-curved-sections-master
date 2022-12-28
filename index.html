@@ -12,7 +12,7 @@
 <body>
   <header>
     <img src="./images/logo.svg" alt="huddle" width="245px">
-    <p>Try it free</p>
+    <a href="#">Try It Free</a>
   </header>
   <main>
     <div class="section1">
@@ -24,46 +24,67 @@
     </div>
 
     <div class="section2">
-      <img src="./images/icon-communities.svg" alt width="50px">
-      <img src="./images/icon-messages.svg" alt width="43px">
-      <h1>1.4k+</h1>
-      <h1>2.7m+</h1>
-      <p>Communities Formed</p>
-      <p>Messages Sent</p>
+      <div><img src="./images/icon-communities.svg" alt width="50px">
+        <h1>1.4k+</h1>
+        <p>Communities Formed</p>
+      </div>
+      <div><img src="./images/icon-messages.svg" alt width="43px">
+        <h1>2.7m+</h1>
+        <p>Messages Sent</p>
+      </div>
     </div>
 
     <div class="section3">
-      <img src="./images/bg-section-top-desktop-1.svg" alt>
+      <picture>
+        <source srcset="./images/bg-section-top-mobile-1.svg" media="(max-width: 375px)">
+        <source srcset="./images/bg-section-top-desktop-1.svg">
+        <img src="./images/bg-section-top-desktop-1.svg" alt>
+      </picture>
+
       <div class="section3a">
         <div>
           <h1>Grow Together</h1>
           <p>Generate meaningful discussions with your audience and build a strong, loyal community. 
             Think of the insightful conversations you miss out on with a feedback form.</p>
         </div>
-          <img src="./images/illustration-grow-together.svg" alt="two people and profile mockups">
+        <img src="./images/illustration-grow-together.svg" alt="two people and profile mockups">
       </div>
-      <img src="./images/bg-section-bottom-desktop-1.svg" alt>
-      
+
+      <picture>
+        <source srcset="./images/bg-section-bottom-mobile-1.svg" media="(max-width: 375px)">
+        <source srcset="./images/bg-section-bottom-desktop-1.svg">
+        <img src="./images/bg-section-bottom-desktop-1.svg" alt>
+      </picture>
+
       <div class="section3b">
-          <img src="./images/illustration-flowing-conversation.svg" alt="four persons sitting around a table">
-          <div>
-            <h1>Flowing Conversations</h1>
-            <p>You wouldn't paginate a conversation in real life, so why do it online? Our threads have 
+        <img src="./images/illustration-flowing-conversation.svg" alt="four persons sitting around a table">
+        <div>
+          <h1>Flowing Conversations</h1>
+          <p>You wouldn't paginate a conversation in real life, so why do it online? Our threads have 
               just-in-time loading for a more natural flow.</p>
-          </div>
         </div>
+      </div>
       
-      <img src="./images/bg-section-top-desktop-2.svg" alt>
+      <picture>
+        <source srcset="./images/bg-section-top-mobile-2.svg" media="(max-width: 375px)">
+        <source srcset="./images/bg-section-top-desktop-2.svg">
+        <img src="./images/bg-section-top-desktop-2.svg" alt>
+      </picture>
+
       <div class="section3a">
         <div>
           <h1>Your Users</h1>
           <p>It takes no time at all to integrate Huddle with your app's authentication solution. This means, 
             once signed in to your app, your users can start chatting immediately.</p>
         </div>
-          <img src="./images/illustration-your-users.svg" alt="users holding chat texts">
+        <img src="./images/illustration-your-users.svg" alt="users holding chat texts">
       </div>
-      <img src="./images/bg-section-bottom-desktop-2.svg" alt>
-    </div>
+
+      <picture>
+        <source srcset="./images/bg-section-bottom-mobile-2.svg" media="(max-width: 375px)">
+        <source srcset="./images/bg-section-bottom-desktop-2.svg">
+        <img src="./images/bg-section-bottom-desktop-2.svg" alt>
+      </picture>
 
     <div class="section1">
       <h2>Ready To Build Your Community?</h2>
@@ -72,14 +93,19 @@
   </main>
 
   <footer>
-    <img src="./images/bg-footer-top-desktop.svg" alt>
-    <div class="section4">
+    <picture>
+      <source srcset="./images/bg-footer-top-mobile.svg" media="(max-width: 375px)">
+      <source srcset="./images/bg-footer-top-desktop.svg">
+      <img src="./images/bg-footer-top-desktop.svg" alt>
+    </picture>
+
+     <div class="section4">
       <div class="section4a">
         <img src="./images/logo.svg" alt="huddle">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla quam, hendrerit lacinia 
           vestibulum a, ultrices quis sem.</p>
         <p class="coordinates"><img src="./images/icon-phone.svg" style="width: 18px; vertical-align:middle;"> Phone: +1-543-123-4567</p>
-        <p class="coordinates"><img src="./images/icon-email.svg" style="width: 18px; vertical-align:middle;"> example@huddle.com</p>
+        <p class="coordinates mail"><img src="./images/icon-email.svg" style="width: 18px; vertical-align:middle;"> example@huddle.com</p>
         
         <div>
           <span style="font-size: 34px;">
@@ -89,7 +115,7 @@
           </span>
         </div>
       </div>
-      <div>
+      <div class="section4b">
         <h1>NEWSLETTER</h1>
         <p>To recieve tips on how to grow your community, sign up to our weekly newsletter. We’ll never 
           send you spam or pass on your email address</p>
@@ -110,18 +136,17 @@
 
   <script>
     function check () {
-      var valid = true, error = "", field = "";
+      var valid = true, error = "", field = "", validRegex ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
       field = document.getElementById("email");
       error = document.getElementById("msg");
-      if (!field.checkValidity() || field == "") {
+      if (!field.checkValidity() || !input.value.match(validRegex) || field.value == "") {
         valid = false;
         field.classList.add("err");
         error.innerHTML = "Check your email please";
       } else {
         field.classList.remove("err");
         error.innerHTML = "";
-      }
-      return valid; }
+      } return valid;}
   </script>
 </body>
 </html>
