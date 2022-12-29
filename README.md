@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution URL](https://your-solution-url.com)
-- Live Site URL: [live site URL](https://your-live-site-url.com)
+- Live Site URL: [live site URL]( https://nefzina.github.io/huddle-landing-page-with-curved-sections-master/)
 
 ## My process
 
