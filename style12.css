@@ -19,9 +19,20 @@ header a {
     border: solid hsl(322, 100%, 66%);
     border-width: 1px;
     border-radius: 30px;
-    padding: 8px 32px 8px 32px;
+    padding: 8px 0 8px 0;
     font: 400 14px 'Open Sans', sans-serif;
     text-decoration: none;
+    text-align: center;
+    width: 135px;
+    max-height: 35px;
+}
+
+header a:hover {
+    color: hsl(321, 78%, 64%);
+    border: solid hsl(321, 78%, 64%);
+    border-width: 1px;
+    box-shadow: 0 4px 8px 0 #d4d4d4;
+    font-weight: bold;
 }
 
 header a:active {
@@ -62,6 +73,7 @@ main {
     box-shadow: 0 8px 8px 0 #cccccc;
 }
 
+.section1 a:hover { background-color: hsl(322, 80%, 46%);}
 .section1 a:active { background-color: hsl(321, 100%, 78%);}
 
 .section1 img {
@@ -199,7 +211,7 @@ input[type=submit] {
     color: white;
     font: 600 16px 'Open Sans', sans-serif;
 }
-
+input[type=submit]:hover { background-color: hsl(322, 80%, 46%);}
 input[type=submit]:active {
     background-color: hsl(321, 100%, 78%);
 }
