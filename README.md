@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Screenshot
 
-![desktop designn](./screenshot_desktop.png)
-![mobile design](./screenshot_mobile.png)
+![desktop design](screenshot_desktop.png)
+![mobile design](screenshot_mobile.png)
 
 
 ### Links
